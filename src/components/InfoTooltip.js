@@ -11,7 +11,7 @@ function InfoTooltip(props) {
         props.isSucceed ? 
           (
             <div className="info">
-            <img className="info__image" src={success} alt="success" />
+            <img className="info__image" src={success} alt="Успешно!" />
             <p className="info__text">Вы успешно зарегистрировались!</p>
             </div>
             
@@ -19,7 +19,7 @@ function InfoTooltip(props) {
         :
           (
             <div className="info">
-            <img className="info__image" src={failure} alt="success" />
+            <img className="info__image" src={failure} alt="Ошибка!" />
             <p className="info__text">Что-то пошло не так! Попробуйте ещё раз.</p>
             </div>
           )
