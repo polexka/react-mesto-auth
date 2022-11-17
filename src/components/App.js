@@ -42,6 +42,7 @@ function App() {
       .then((res) => {
         setAuth(res.data);
         setLoginStatus(true);
+        history.push('/');
       })
       .catch((err) => {
         console.log(`Ошибка авторизации: ${err}`);
@@ -146,7 +147,6 @@ function App() {
   function handleSignUpFormSubmit(data) {
     auth.signup(data)
       .then((res) => {
-        console.log(res);
         setInfoTooltipStatus(true);
         history.push('/sign-in');
       })
@@ -160,7 +160,6 @@ function App() {
   function handleSignInSubmit(data) {
     auth.signin(data)
       .then((res) => {
-        console.log(res);
         localStorage.setItem('token', res.token);
         setInfoTooltipStatus(true);
         auth.authorization(localStorage.getItem('token'))
@@ -195,8 +194,6 @@ function App() {
     setInfoTooltip(false);
     setSelectedCard(null);
   }
-
-  console.log(loginStatus);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
